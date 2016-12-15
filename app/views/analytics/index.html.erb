@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MixPanel</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/assets/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="/assets/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/assets/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="/assets/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/assets/font-awesome.min.css" rel="stylesheet" type="text/css">
+     
+    <link rel="stylesheet" type="text/css" media="all" href="/assets/js/jsDatePick_ltr.min.css" />
+<script type="text/javascript" src="/assets/js/jsDatePick.min.1.3.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        
+
+        <div id="page-wrapper">
+            
+           <div class = "main" style="float:left">     
+           <input type="text" id="inputField" style="width:900px; height:22px; border-radius:15px; margin:15px;" size="25" name="date" required placeholder=""/>
+           </div>
+           <div class ="main_down" style="float :left ;margin:11px">
+            <select name="Event" id="txtHint" style="width:200px; height:22px; border-radius:15px;">
+                <option value="">-Select event-</option>
+                <option value ="Get Deal">Get Deal  </option>
+                <option value ="My Favorites">My Favorites  </option>
+                <option value ="Featured banner">Featured banner  </option>
+                <option value ="Redeem">Redeem  </option>
+                   
+            </select>
+           </div>
+  
+        <!-- Load jQuery and bootstrap datepicker scripts -->
+        <script src="/assets/js/jquery-1.9.1.min.js"></script>
+        <script src="/assets/js/bootstrap-datepicker.js"></script>
+       
+        <script type="text/javascript">
+  window.onload = function(){
+    new JsDatePick({
+      useMode:2,
+      target:"inputField",
+      dateFormat:"%Y-%m-%d"
+      /*selectedDate:{        This is an example of what the full configuration offers.
+        day:5,            For full documentation about these settings please see the full version of the code.
+        month:9,
+        year:2006
+      },
+      yearsRange:[1978,2020],
+      limitToToday:false,
+      cellColorScheme:"beige",
+      dateFormat:"%m-%d-%Y",
+      imgPath:"img/",
+      weekStartDay:1*/
+    });
+  };
+</script>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Analytics</h1>
+
+<table style="border:2px solid">
+  <thead>
+    <tr style="border:2px solid">
+      
+      <th style="border:2px solid"> user_name </th>
+      <th style="border:2px solid"> vendor_name </th>
+      <th style="border:2px solid"> corporate_name </th>
+      <th style="border:2px solid"> browser </th>
+      <th style="border:2px solid"> event </th>
+      <th style="border:2px solid"> details  </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <h1>WWWWWWWW </h1>
+    <% @analytics.each do |analytic| %>
+
+      <tr style="border:2px solid">
+        
+        <td style="border:2px solid"> <%= analytic.user_name %></td>
+        <td style="border:2px solid"> <%= analytic.vendor_name %></td>
+        <td style="border:2px solid"> <%= analytic.corporate_name %></td>
+        <td style="border:2px solid"> <%= analytic.browser%></td>
+        <td style="border:2px solid"> <%= analytic.event %></td>
+        <td style="border:2px solid"> <%= analytic.details %></td>
+<br>
+        <td style="border:2px solid"><%= link_to 'Show', analytic %></td>
+        <td style="border:2px solid"><%= link_to 'Edit', edit_analytic_path(analytic) %></td>
+        <td style="border:2px solid"><%= link_to 'Destroy', analytic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Analytic', new_analytic_path %>
+
+
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="/assets/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/assets/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/assets/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="/assets/raphael.min.js"></script>
+    <script src="/assets/morris.min.js"></script>
+    <script src="/assets/morris-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/assets/sb-admin-2.js"></script>
+
+</body>
+
+</html>
+

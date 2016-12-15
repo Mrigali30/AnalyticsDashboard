@@ -1,0 +1,57 @@
+<%= form_for(@analytic) do |f| %>
+  <% if @analytic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@analytic.errors.count, "error") %> prohibited this analytic from being saved:</h2>
+
+      <ul>
+      <% @analytic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="col-md-12" style="padding:100px">
+      
+    <div class="row">
+      <div class="col-md-2">user_name</div>
+      
+      <div class="col-md-1"><%= f.text_field :user_name%> </div>
+     
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-2">vendor_name</div>
+      <div class="col-md-1"><%= f.text_field :vendor_name%></div>  
+      
+    </div>
+    <br> 
+    <div class="row">
+      <div class="col-md-2">corporate_name</div>
+      <div class="col-md-1"><%= f.text_field :corporate_name%></div>
+      
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-2">browser</div>
+      <div class="col-md-1"><%= f.text_field :browser%></div>
+      
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-2">event</div>
+        <div class="col-md-1"><%= f.text_field :event%></div>
+        
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-2">details</div>
+        <div class="col-md-1"><%= f.text_area :details%></div>
+    </div>
+</div>
+<div class="actions">
+    <%= f.submit %>
+</div>
+<% end %>
+
